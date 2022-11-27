@@ -5,7 +5,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+//--import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 
 import {useStyles} from './styles.js'
@@ -22,7 +22,7 @@ const Header = () => {
       <AppBar className={classes.header}>
         <Toolbar>
           <Link to="/">
-            <img src={logo} alt="Galerie" className={classes.logo}/>
+            <img src={logo} alt="NFT Gallery" className={classes.logo}/>
           </Link>
           <div className={classes.account}>
             <AccountBalanceWalletIcon titleAccess="Wallet Address" className={classes.walletIcon}/>
