@@ -8,8 +8,8 @@ import Button from '@material-ui/core/Button';
 import getWeb3 from "../../utils/getWeb3";
 import { api } from "../../services/api";
 
-import ArtMarketplace from "../../contracts/ArtMarketplace.json";
-import ArtToken from "../../contracts/ArtToken.json";
+import ArtMarketplace from "../../contracts/MyMarketplace.json";
+import ArtToken from "../../contracts/MyToken.json";
 
 import {
   setNft,

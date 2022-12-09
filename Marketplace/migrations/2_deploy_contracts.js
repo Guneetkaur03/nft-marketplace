@@ -1,14 +1,14 @@
-const ArtToken = artifacts.require("ArtToken");
-const ArtMarketplace = artifacts.require("ArtMarketplace");
+const MyToken = artifacts.require("MyToken");
+const MyMarketplace = artifacts.require("MyMarketplace");
 
 module.exports = async function(deployer) {
-  await deployer.deploy(ArtToken);
+  await deployer.deploy(MyToken);
 
-  const token = await ArtToken.deployed()
+  const token = await MyToken.deployed()
 
-  await deployer.deploy(ArtMarketplace, token.address)
+  await deployer.deploy(MyMarketplace, token.address)
 
-  const market = await ArtMarketplace.deployed()
+  const market = await MyMarketplace.deployed()
 
   await token.setMarketplace(market.address)
 };
