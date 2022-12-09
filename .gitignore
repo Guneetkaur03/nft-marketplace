@@ -44,3 +44,11 @@ Marketplace/.env.production.local
 Marketplace/npm-debug.log*
 Marketplace/yarn-debug.log*
 Marketplace/yarn-error.log*
+
+
+*/node_modules/*
+package*
+Marketplace/package*
+Marketplace/client/package-lock*
+Marketplace/package-lock.json
+Marketplace/package-lock.json

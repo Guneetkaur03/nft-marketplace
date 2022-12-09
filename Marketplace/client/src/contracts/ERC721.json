@@ -28309,8 +28309,13 @@
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
   "networks": {},
+<<<<<<< HEAD
   "schemaVersion": "3.4.10",
   "updatedAt": "2022-11-27T00:45:47.420Z",
+=======
+  "schemaVersion": "3.4.11",
+  "updatedAt": "2022-11-27T00:49:59.695Z",
+>>>>>>> 9dc411b356a91098f4e0e4a5db1f0a53f0c146a5
   "devdoc": {
     "details": "Implementation of https://eips.ethereum.org/EIPS/eip-721[ERC721] Non-Fungible Token Standard, including the Metadata extension, but not including the Enumerable extension, which is available separately as {ERC721Enumerable}.",
     "kind": "dev",
