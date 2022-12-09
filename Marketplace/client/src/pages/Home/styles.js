@@ -38,8 +38,12 @@ const useStyles = makeStyles({
       textTransform: 'none',
       fontSize: "1.2rem",
       fontWeight: "400",
-      background: '#3F51B5'
-    }
+      background: '#5AF',
+    },
+    ".button:hover ":{
+      backgroundColor:"#5AF",
+      transition: "0.7s",
+  }
 
   },
   allNfts: {

@@ -30,6 +30,7 @@ import stones from "../../assets/arts/rentao_-22-10-.jpg";
 import wale from "../../assets/arts/luzhan-liu-1-1500.jpg";
 import comic from "../../assets/arts/daniel-taylor-black-and-white-2019-2.jpg";
 import galerie from "../../assets/galerie.svg";
+import doodle from "../../assets/bg.jpeg";
 
 
 const Home = () => {
@@ -145,51 +146,51 @@ const Home = () => {
     <div className={classes.homepage}>
       <section className={classes.banner}>
         <Grid container spacing={0} xs={12} className={classes.gridBanner}>
-          <Grid item xs={3}>
+          <Grid item xs={4}>
             <Grid container spacing={0}>
               <Grid item xs={8}>
-                <img src={dreaming} alt="dreaming" className={classes.images} />
+                <img src={doodle} alt="dreaming" className={classes.images} />
               </Grid>
               <Grid item xs={4}>
-                <img src={veterans} alt="veterans" className={classes.images} />
+                <img src={doodle} alt="veterans" className={classes.images} />
               </Grid>
               <Grid item xs={7}>
-                <img src={modeling3d} alt="modeling3d" className={classes.images} />
+                <img src={doodle} alt="modeling3d" className={classes.images} />
               </Grid>
               <Grid item xs={5}>
-                <img src={lionKing} alt="lionKing" className={classes.images} />
+                <img src={doodle} alt="lionKing" className={classes.images} />
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={6} className={classes.main}>
-            <img src={galerie} alt="galerie" />
-            <Typography>A decentralized NFT marketplace where you can expose your art.</Typography>
+          <Grid item xs={4} className={classes.main}>
+            <img src={doodle} alt="galerie" />
+            <Typography className={classes.content}>A college notes NFT marketplace, where you can trade your work.</Typography>
             <Link to="/create-nft">
               <Button variant="contained" color="primary" disableElevation>
-                Mint your art
+                Start Minting
               </Button>
             </Link>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={4}>
             <Grid container spacing={0}>
               <Grid item xs={8}>
-                <img src={stones} alt="dreaming" className={classes.images} />
+                <img src={doodle} alt="dreaming" className={classes.images} />
               </Grid>
               <Grid item xs={4}>
-                <img src={woman} alt="veterans" className={classes.images} />
+                <img src={doodle} alt="veterans" className={classes.images} />
               </Grid>
               <Grid item xs={7}>
-                <img src={wale} alt="modeling3d" className={classes.images} />
+                <img src={doodle} alt="modeling3d" className={classes.images} />
               </Grid>
               <Grid item xs={5}>
-                <img src={comic} alt="lionKing" className={classes.images} />
+                <img src={doodle} alt="lionKing" className={classes.images} />
               </Grid>
             </Grid>
           </Grid>
         </Grid>
       </section>
       <section className={classes.allNfts}>
-        <Typography className={classes.title}>Latest artwork</Typography>
+        <Typography className={classes.title}>Best Notes</Typography>
         <Grid
           container
           direction="row"
