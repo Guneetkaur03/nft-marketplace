@@ -10,7 +10,7 @@ import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 
 import {useStyles} from './styles.js'
 
-import logo from '../../assets/Logo.svg';
+import logo from '../../assets/logo192.png';
 
 const Header = () => {
   const classes = useStyles();
@@ -22,8 +22,9 @@ const Header = () => {
       <AppBar className={classes.header}>
         <Toolbar>
           <Link to="/">
-            <img src={logo} alt="NFT Gallery" className={classes.logo}/>
+            <img src={logo} alt="NFT Notes" className={classes.logo}/>
           </Link>
+          <Typography className={classes.title}>  arketplace</Typography>
           <div className={classes.account}>
             <AccountBalanceWalletIcon titleAccess="Wallet Address" className={classes.walletIcon}/>
             <Typography variant="subtitle1">{account.slice(0,7)}...{account.slice(-4)}</Typography>

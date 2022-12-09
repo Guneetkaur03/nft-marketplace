@@ -52,3 +52,5 @@ Marketplace/package*
 Marketplace/client/package-lock*
 Marketplace/package-lock.json
 Marketplace/package-lock.json
+Marketplace/client/src/contracts/*
+Marketplace/client/src/contracts
