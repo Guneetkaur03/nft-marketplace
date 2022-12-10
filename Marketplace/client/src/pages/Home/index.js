@@ -163,7 +163,39 @@ const Home = () => {
         
         </section>
         <section className={classes.allNfts}>
-            <Typography className={classes.title}>Best Notes</Typography>
+            <Typography className={classes.title}>Created by me</Typography>
+            <Grid
+                container
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+                spacing={2}
+            >
+                {nftItem.map((nft) => (
+                <Grid item key={nft.tokenId}>
+                    <Card {...nft} />
+                </Grid>
+                ))}
+            </Grid>
+        </section>
+        <section className={classes.allNfts}>
+            <Typography className={classes.title}>Owned by Me</Typography>
+            <Grid
+                container
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+                spacing={2}
+            >
+                {nftItem.map((nft) => (
+                <Grid item key={nft.tokenId}>
+                    <Card {...nft} />
+                </Grid>
+                ))}
+            </Grid>
+        </section>
+        <section className={classes.allNfts}>
+            <Typography className={classes.title}>Up for Sale</Typography>
             <Grid
                 container
                 direction="row"
