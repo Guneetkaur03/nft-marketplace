@@ -64,7 +64,7 @@ const useStyles = makeStyles({
     marginBottom: "1rem",
   },
   content: {
-    // textAlign: "left",
+    width: "100%",
     padding: 6,
     margin: 6,
     backgroundColor: '#5AF',

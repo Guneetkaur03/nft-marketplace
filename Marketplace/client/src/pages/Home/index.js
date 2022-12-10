@@ -138,25 +138,29 @@ const Home = () => {
         <section className={classes.banner}>
         <Grid container spacing={0} xs={12} className={classes.gridBanner}>
             <Grid container spacing={0}>
-                <Grid item xs={4}>
+                <Grid item xs={2}>
                     <img src={doodle} alt="bg-1" className={classes.images} />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={2}>
                     <img src={doodle} alt="bg-2" className={classes.images} />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={4} className={classes.main}>
+                    <Typography className={classes.content}>A college notes NFT marketplace, where you can trade your work.</Typography>
+                    <Link to="/create-nft">
+                        <Button variant="contained" color="primary" disableElevation>
+                            Start Minting
+                        </Button>
+                    </Link>
+                </Grid>
+                <Grid item xs={2}>
                     <img src={doodle} alt="bg-3" className={classes.images} />
+                </Grid>
+                <Grid item xs={2}>
+                    <img src={doodle} alt="bg-4" className={classes.images} />
                 </Grid>
             </Grid>
         </Grid>
-        <Grid item xs={0}  spacing={0} className={classes.main}>
-            <Typography className={classes.content}>A college notes NFT marketplace, where you can trade your work.</Typography>
-            <Link to="/create-nft">
-                <Button variant="contained" color="primary" disableElevation>
-                    Start Minting
-                </Button>
-            </Link>
-        </Grid>
+        
         </section>
         <section className={classes.allNfts}>
         <Typography className={classes.title}>Best Notes</Typography>
