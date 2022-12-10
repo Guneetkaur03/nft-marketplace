@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import doodle from "../../assets/bg.jpeg";
 const useStyles = makeStyles({
   homepage: {
-
+    backgroundColor: '#ffffdd',
   },
   images: {
     objectFit: "cover",
@@ -58,6 +58,7 @@ const useStyles = makeStyles({
   allNfts: {
     marginTop: "2rem",
     padding: "0 2rem",
+    
   },
   title: {
     fontFamily: "sans-serif",
@@ -73,6 +74,9 @@ const useStyles = makeStyles({
     color: 'white',
     fontSize: "12rem",
     fontWeight: "800",
+  },
+  body: {
+    backgroundColor: '#f7f',
   }
 });
 

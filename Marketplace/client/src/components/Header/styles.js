@@ -26,6 +26,9 @@ const useStyles = makeStyles({
   content: {
     position: 'absolute',
     alignItems: "center",
+  },
+  body: {
+    backgroundColor: '#f0fdf0',
   }
 });
 
