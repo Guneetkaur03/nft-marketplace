@@ -18,6 +18,7 @@ const useStyles = makeStyles({
   gridBanner: {
     // margin: 0,
     // width: '100%',
+    // height: '10%'
   },
   figure: {
     margin: 0,
@@ -26,12 +27,13 @@ const useStyles = makeStyles({
   main: {
     backgroundImage: `url(${doodle})`,
     // backgroundPosition: 'center', 
-    backgroundSize: 'cover', 
+    backgroundSize: 'contain', 
     backgroundRepeat: 'no-repeat',
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+    height: '350px',
     padding: "0 1rem",
     '& img': {
       width: "55%"
