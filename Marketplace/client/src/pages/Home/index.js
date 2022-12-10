@@ -8,8 +8,8 @@ import Button from '@material-ui/core/Button';
 import getWeb3 from "../../utils/getWeb3";
 import { api } from "../../services/api";
 
-import ArtMarketplace from "../../contracts/MyMarketplace.json";
-import ArtToken from "../../contracts/MyToken.json";
+import MyMarketplace from "../../contracts/MyMarketplace.json";
+import MyToken from "../../contracts/MyToken.json";
 
 import {
   setNft,
@@ -21,15 +21,6 @@ import Card from "../../components/Card";
 
 import { useStyles } from "./styles.js";
 
-import veterans from "../../assets/arts/Sparse-Ahmed-Mostafa-vetarans-2.jpg";
-import lionKing from "../../assets/arts/suresh-pydikondala-lion.jpg";
-import dreaming from "../../assets/arts/phuongvp-maybe-i-m-dreaming-by-pvpgk-deggyli.jpg";
-import modeling3d from "../../assets/arts/alan-linssen-alanlinssen-kitbashkitrender2.jpg";
-import woman from "../../assets/arts/ashline-sketch-brushes-3-2.jpg";
-import stones from "../../assets/arts/rentao_-22-10-.jpg";
-import wale from "../../assets/arts/luzhan-liu-1-1500.jpg";
-import comic from "../../assets/arts/daniel-taylor-black-and-white-2019-2.jpg";
-import galerie from "../../assets/galerie.svg";
 import doodle from "../../assets/bg.jpeg";
 
 
@@ -52,16 +43,16 @@ const Home = () => {
 
         const networkId = await web3.eth.net.getId();
         try {
-          const artTokenContract = new web3.eth.Contract(
-            ArtToken.abi,
-            ArtToken.networks[networkId].address
+          const myTokenContract = new web3.eth.Contract(
+            MyToken.abi,
+            MyToken.networks[networkId].address
           );
           // console.log("Contract: ", artTokenContract);
           const marketplaceContract = new web3.eth.Contract(
-            ArtMarketplace.abi,
-            ArtMarketplace.networks[networkId].address
+            MyMarketplace.abi,
+            MyMarketplace.networks[networkId].address
           );
-          const totalSupply = await artTokenContract.methods
+          const totalSupply = await myTokenContract.methods
             .totalSupply()
             .call();
           const totalItemsForSale = await marketplaceContract.methods
@@ -69,8 +60,8 @@ const Home = () => {
             .call();
 
           for (var tokenId = 1; tokenId <= totalSupply; tokenId++) {
-            let item = await artTokenContract.methods.Items(tokenId).call();
-            let owner = await artTokenContract.methods.ownerOf(tokenId).call();
+            let item = await myTokenContract.methods.mapping_of_tokens(tokenId).call();
+            let owner = await myTokenContract.methods.ownerOf(tokenId).call();
 
             const response = await api
               .get(`/tokens/${tokenId}`)
@@ -117,7 +108,7 @@ const Home = () => {
           }
 
           dispatch(setAccount(accounts[0]));
-          dispatch(setTokenContract(artTokenContract));
+          dispatch(setTokenContract(myTokenContract));
           dispatch(setMarketContract(marketplaceContract));
           dispatch(setNft(itemsList));
         } catch (error) {
