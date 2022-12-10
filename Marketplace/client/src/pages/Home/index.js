@@ -183,6 +183,25 @@ const Home = () => {
             </Grid>
         </section>
         
+        {/* To display the tokens that are created by me*/}
+        <section className={classes.allNfts}>
+            <Typography className={classes.title}>Created by me</Typography>
+            <Grid
+                container
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+                spacing={2}
+            >
+                {nftItem.filter(nft => nft.creator === account).map((nft) => (
+                <Grid item key={nft.tokenId}>
+                    <Card {...nft} />
+                </Grid>
+                ))}
+            </Grid>
+        </section>
+
+        {/* To display the tokens that are up for sale */}
         <section className={classes.allNfts}>
             <Typography className={classes.title}>Up for Sale</Typography>
             <Grid
@@ -192,7 +211,7 @@ const Home = () => {
                 alignItems="center"
                 spacing={2}
             >
-                {nftItem.map((nft) => (
+                {nftItem.filter(nft => nft.creator !== account && nft.isForSale).map((nft) => (
                 <Grid item key={nft.tokenId}>
                     <Card {...nft} />
                 </Grid>
@@ -200,6 +219,7 @@ const Home = () => {
             </Grid>
         </section>
 
+        {/* To display the tokens that are sold by me
         <section className={classes.allNfts}>
             <Typography className={classes.title}>Sold by me</Typography>
             <Grid
@@ -209,13 +229,13 @@ const Home = () => {
                 alignItems="center"
                 spacing={2}
             >
-                {nftItem.filter(nft => nft.creator === account).map((nft) => (
+                {nftItem.filter(nft => nft.creator === account && nft.isSold).map((nft) => (
                   <Grid item key={nft.tokenId}>
                     <Card {...nft} />
                   </Grid>
                 ))}
             </Grid>
-        </section>
+        </section> */}
     </div>
     );
 };

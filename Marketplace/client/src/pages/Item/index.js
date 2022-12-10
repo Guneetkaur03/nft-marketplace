@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -14,7 +14,7 @@ import { useStyles } from "./styles.js";
 
 const Item = () => {
   const classes = useStyles();
-
+  const history = useHistory();
   const { nftId } = useParams();
   const marketplaceContract = useSelector(
     (state) => state.allNft.marketplaceContract
@@ -60,6 +60,7 @@ const Item = () => {
       console.error("Error, puting for sale: ", error);
       alert("Error while puting for sale!");
     }
+    history.push('/');
   }
 
   async function buy(saleId, price) {
@@ -73,6 +74,7 @@ const Item = () => {
       console.error("Error, buying: ", error);
       alert("Error while buying!");
     }
+    history.push('/');
   }
 
   return (
