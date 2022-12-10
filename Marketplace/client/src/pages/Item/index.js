@@ -53,7 +53,7 @@ const Item = () => {
       // await artTokenContract.methods.approve(marketAddress, items[itemIdex].tokenId).send({from: accounts[0]});
 
       const receipt = await marketplaceContract.methods
-        .putItemForSale(id, price)
+        .putTokenOnSale(id, price)
         .send({ gas: 210000, from: account });
       console.log(receipt);
     } catch (error) {
@@ -65,10 +65,10 @@ const Item = () => {
   async function buy(saleId, price) {
     try {
       const receipt = await marketplaceContract.methods
-        .buyItem(saleId)
+        .buyToken(saleId)
         .send({ gas: 210000, value: price, from: account });
       console.log(receipt);
-      const id = receipt.events.itemSold.id; ///saleId
+      const id = receipt.events.tokenSold.id; ///saleId
     } catch (error) {
       console.error("Error, buying: ", error);
       alert("Error while buying!");

@@ -87,10 +87,10 @@ const Home = () => {
           if (totalItemsForSale > 0) {
             for (var saleId = 0; saleId < totalItemsForSale; saleId++) {
               let item = await marketplaceContract.methods
-                .itemsForSale(saleId)
+                .tokensOnSale(saleId)
                 .call();
               let active = await marketplaceContract.methods
-                .activeItems(item.tokenId)
+                .activeSale(item.tokenId)
                 .call();
 
               let itemListIndex = itemsList.findIndex(
