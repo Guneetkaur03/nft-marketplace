@@ -19,6 +19,7 @@ const useStyles = makeStyles({
   content: {
     // textAlign: "left",
     // padding: spaceUnits * 6,
+    backgroundColor: 'black'
   },
   divider: {
     margin: `${spaceUnits * 3}px 0`,

@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-
+import doodle from "../../assets/bg2.jpeg";
 const useStyles = makeStyles({
   homepage: {
 
@@ -19,8 +19,15 @@ const useStyles = makeStyles({
     // margin: 0,
     // width: '100%',
   },
+  figure: {
+    margin: 0,
+    position: "relative"
+  },
   main: {
-    backgroundColor: "white",
+    backgroundImage: `url(${doodle})`,
+    // backgroundPosition: 'center', 
+    backgroundSize: 'cover', 
+    backgroundRepeat: 'no-repeat',
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -55,6 +62,15 @@ const useStyles = makeStyles({
     fontSize: "1.8rem",
     fontWeight: "600",
     marginBottom: "1rem",
+  },
+  content: {
+    width: "100%",
+    padding: 6,
+    margin: 6,
+    backgroundColor: '#5AF',
+    color: 'white',
+    fontSize: "12rem",
+    fontWeight: "800",
   }
 });
 

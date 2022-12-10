@@ -133,71 +133,53 @@ const Home = () => {
 
   const nftItem = useSelector((state) => state.allNft.nft);
 
-  return (
+    return (
     <div className={classes.homepage}>
-      <section className={classes.banner}>
+        <section className={classes.banner}>
         <Grid container spacing={0} xs={12} className={classes.gridBanner}>
-          <Grid item xs={4}>
             <Grid container spacing={0}>
-              <Grid item xs={8}>
-                <img src={doodle} alt="dreaming" className={classes.images} />
-              </Grid>
-              <Grid item xs={4}>
-                <img src={doodle} alt="veterans" className={classes.images} />
-              </Grid>
-              <Grid item xs={7}>
-                <img src={doodle} alt="modeling3d" className={classes.images} />
-              </Grid>
-              <Grid item xs={5}>
-                <img src={doodle} alt="lionKing" className={classes.images} />
-              </Grid>
+                <Grid item xs={2}>
+                    <img src={doodle} alt="bg-1" className={classes.images} />
+                </Grid>
+                <Grid item xs={2}>
+                    <img src={doodle} alt="bg-2" className={classes.images} />
+                </Grid>
+                <Grid item xs={4} className={classes.main}>
+                    <Typography className={classes.content}>A college notes NFT marketplace, where you can trade your work.</Typography>
+                    <Link to="/create-nft">
+                        <Button variant="contained" color="primary" disableElevation>
+                            Start Minting
+                        </Button>
+                    </Link>
+                </Grid>
+                <Grid item xs={2}>
+                    <img src={doodle} alt="bg-3" className={classes.images} />
+                </Grid>
+                <Grid item xs={2}>
+                    <img src={doodle} alt="bg-4" className={classes.images} />
+                </Grid>
             </Grid>
-          </Grid>
-          <Grid item xs={4} className={classes.main}>
-            <img src={doodle} alt="galerie" />
-            <Typography className={classes.content}>A college notes NFT marketplace, where you can trade your work.</Typography>
-            <Link to="/create-nft">
-              <Button variant="contained" color="primary" disableElevation>
-                Start Minting
-              </Button>
-            </Link>
-          </Grid>
-          <Grid item xs={4}>
-            <Grid container spacing={0}>
-              <Grid item xs={8}>
-                <img src={doodle} alt="dreaming" className={classes.images} />
-              </Grid>
-              <Grid item xs={4}>
-                <img src={doodle} alt="veterans" className={classes.images} />
-              </Grid>
-              <Grid item xs={7}>
-                <img src={doodle} alt="modeling3d" className={classes.images} />
-              </Grid>
-              <Grid item xs={5}>
-                <img src={doodle} alt="lionKing" className={classes.images} />
-              </Grid>
-            </Grid>
-          </Grid>
         </Grid>
-      </section>
-      <section className={classes.allNfts}>
+        
+        </section>
+        <section className={classes.allNfts}>
         <Typography className={classes.title}>Best Notes</Typography>
         <Grid
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-          spacing={2}
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+            spacing={2}
         >
-          {nftItem.map((nft) => (
+            {nftItem.map((nft) => (
             <Grid item key={nft.tokenId}>
-              <Card {...nft} />
+                <Card {...nft} />
             </Grid>
-          ))}
+            ))}
         </Grid>
-      </section>
+        </section>
     </div>
-  );
+    );
 };
 
 export default Home;
