@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Web3 from "web3";
 
+import {useSelector } from "react-redux";
+
 import { Card as MuiCard } from "@material-ui/core";
 import Chip from "@material-ui/core/Chip";
 import SvgIcon from "@material-ui/core/SvgIcon";
@@ -14,9 +16,16 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import { useStyles } from "./styles.js";
 import { ReactComponent as EthereumLogo } from "../../assets/ethereum_logo.svg";
 
-const Card = ({ tokenId, name, image, price, owner, isForSale }) => {
+const Card = ({ tokenId, name, image, price, owner, isSold, creator, isForSale}) => {
   const classes = useStyles();
+  const account = useSelector((state) => state.allNft.account);
+
   console.log("image: ", image);
+  console.log("account: ", account);
+  console.log("owner: ", owner);
+  console.log("creatror: ", creator);
+  console.log("is sold:", isSold);
+
   return (
     <Link to={`/nft/${tokenId}`}>
       <MuiCard className={classes.root}>
@@ -37,12 +46,31 @@ const Card = ({ tokenId, name, image, price, owner, isForSale }) => {
               >
                 {name}
               </Typography>
-              <Chip
-                size="small"
-                disabled={true}
-                label="Selling"
-                className={classes.badge}
-              />
+
+              {isForSale && (
+                <Chip
+                    size="small"
+                    disabled={true}
+                    label="Selling"
+                    className={classes.badge}
+                />
+              )}
+              {!isForSale && !isSold &&(
+                <Chip
+                    size="small"
+                    disabled={true}
+                    label="Not Selling Yet"
+                    className={classes.badge}
+                />
+              )}
+              {isSold && (
+                    <Chip
+                        size="small"
+                        disabled={true}
+                        label="Already Sold"
+                        className={classes.badge}
+                    />
+                )}
             </div>
             <Typography variant="h6" className={classes.price}>
               <SvgIcon

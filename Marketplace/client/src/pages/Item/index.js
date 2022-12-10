@@ -146,7 +146,7 @@ const Item = () => {
                     fullWidth
                     disabled
                   />
-                  {owner === account && !isForSale && (
+                  {owner === account && !isSold && !isForSale && (
                     <Button
                       variant="contained"
                       color="primary"
@@ -155,7 +155,7 @@ const Item = () => {
                       Sell
                     </Button>
                   )}
-                  {owner !== account && isForSale && (
+                  {owner !== account && isForSale && !isSold &&(
                     <Button
                       variant="contained"
                       color="primary"

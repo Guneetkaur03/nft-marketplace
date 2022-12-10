@@ -26,7 +26,9 @@ import doodle from "../../assets/bg.jpeg";
 
 const Home = () => {
   const classes = useStyles();
+  const account = useSelector((state) => state.allNft.account);
   const nft = useSelector((state) => state.allNft.nft);
+  console.log("nft:", nft);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -162,8 +164,10 @@ const Home = () => {
         </Grid>
         
         </section>
+
+        {/* To display the tokens that are owned by me */}
         <section className={classes.allNfts}>
-            <Typography className={classes.title}>Created by me</Typography>
+            <Typography className={classes.title}>Bought by Me</Typography>
             <Grid
                 container
                 direction="row"
@@ -171,29 +175,14 @@ const Home = () => {
                 alignItems="center"
                 spacing={2}
             >
-                {nftItem.map((nft) => (
+                {nftItem.filter(nft => nft.owner === account && nft.owner !== nft.creator).map((nft) => (
                 <Grid item key={nft.tokenId}>
                     <Card {...nft} />
                 </Grid>
                 ))}
             </Grid>
         </section>
-        <section className={classes.allNfts}>
-            <Typography className={classes.title}>Owned by Me</Typography>
-            <Grid
-                container
-                direction="row"
-                justifyContent="center"
-                alignItems="center"
-                spacing={2}
-            >
-                {nftItem.map((nft) => (
-                <Grid item key={nft.tokenId}>
-                    <Card {...nft} />
-                </Grid>
-                ))}
-            </Grid>
-        </section>
+        
         <section className={classes.allNfts}>
             <Typography className={classes.title}>Up for Sale</Typography>
             <Grid
@@ -207,6 +196,23 @@ const Home = () => {
                 <Grid item key={nft.tokenId}>
                     <Card {...nft} />
                 </Grid>
+                ))}
+            </Grid>
+        </section>
+
+        <section className={classes.allNfts}>
+            <Typography className={classes.title}>Sold by me</Typography>
+            <Grid
+                container
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+                spacing={2}
+            >
+                {nftItem.filter(nft => nft.creator === account).map((nft) => (
+                  <Grid item key={nft.tokenId}>
+                    <Card {...nft} />
+                  </Grid>
                 ))}
             </Grid>
         </section>
